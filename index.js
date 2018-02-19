@@ -4,32 +4,20 @@ var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
 
-var request = require('request');
+//set up middleware
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(ejsLayouts);
 
-var headers = {
-    'X-eBirdApiToken': process.env.EBIRD_API_KEY
-};
+app.use(express.static(__dirname + "/public/"));
 
-var options = {
-    //query recent sightings based on location
-    url: 'https://ebird.org/ws2.0/data/obs/US-WA-033/recent',
-
-    // query all locations codes based on state
-    // url: 'https://ebird.org/ws2.0/ref/region/list/subnational2/US-WA.json',
-
-    headers: headers
-};
-
-app.get('/', function(req, res){
-  function callback(error, response, body) {
-    if (!error && response.statusCode == 200) {
-        res.send(body);
-    }
-    else{
-      console.log(error);
-    }
-  }
-  request(options, callback);
+// home page route
+app.get('/', function(req,res){
+	res.render('home');
 });
+
+//controllers
+app.use('/eBird', require('./controllers/eBird.js'));
+
 
 app.listen(process.env.PORT || 3000);
