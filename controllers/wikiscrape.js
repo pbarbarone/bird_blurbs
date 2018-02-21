@@ -31,7 +31,7 @@ const { JSDOM } = jsdom;
 
 //Defaulting to wikipedia to grab image url
 router.get('/', function(req,res){
-    for(var i = 0; i <= 230; i++){
+    for(var i = 0; i <= 236; i++){
         db.bird.findOne({
             where: {id: i}
         }).then(function(bird){
@@ -52,13 +52,6 @@ router.get('/', function(req,res){
     res.send('scraped maybe?');
 });
 
-//     request('https://en.wikipedia.org/wiki/American_crow', function(error,response,data){
-//         var $ = cheerio.load(data);
-//         var imageUrl = $('#mw-content-text > div > table.infobox.biota > tbody > tr:nth-child(2) > td > a > img').attr('src');
-//         console.log('https:' + imageUrl)
-//     });
-//     res.send('wiki scrape reached, check termninal logs');
-// });
 
 
 module.exports = router;
