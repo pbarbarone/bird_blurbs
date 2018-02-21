@@ -1,8 +1,6 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "birds_development",
+    "database": "birds",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
