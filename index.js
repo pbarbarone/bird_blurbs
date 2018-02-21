@@ -5,6 +5,7 @@ var ejsLayouts = require('express-ejs-layouts');
 var app = express();
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+var twit = require('twit');
 
 //set up middleware
 app.set('view engine', 'ejs');
