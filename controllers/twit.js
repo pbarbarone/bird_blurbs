@@ -55,6 +55,8 @@ router.get('/', function(req, res){
         console.log(bird.id)
         var b64content = fs.readFileSync('./birdImgs/'+ bird.id +'.jpg', { encoding: 'base64' })
         console.log(b64content);
+        // res.render('home', {bird: bird});
+        res.render('home',{bird: bird});
         T.post('media/upload', { media_data: b64content }, function (err, data, response) {
           // now we can assign alt text to the media, for use by screen readers and 
           // other text-based presentations and interpreters 
@@ -65,17 +67,15 @@ router.get('/', function(req, res){
           T.post('media/metadata/create', meta_params, function (err, data, response) {
             if (!err) {
               // now we can reference the media and post a tweet (media will attach to the tweet) 
-              var params = { status: 'Common Name: '+ bird.sciName + ' Scientific Name: ' + bird.comName, media_ids: [mediaIdStr] }
+              var params = { status: 'Common Name: '+ bird.comName + ' Scientific Name: ' + bird.sciName, media_ids: [mediaIdStr] }
          
               T.post('statuses/update', params, function(err, data, response) {
-                console.log(data)
               });
             }
           });
         });
       };
     });
-  res.send('you dun tweeted')
 });
 
 // function imgGet (){

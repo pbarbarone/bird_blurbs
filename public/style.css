@@ -1,0 +1,30 @@
+body{
+  text-align: center;
+  background-color: #C7B3B5;
+}
+
+.wrapper{
+  text-align: center;
+  position: relative;
+  margin-top: 100px;
+}
+
+.bird-img {
+  border: solid white 3px;
+  border-radius: 50%;
+}
+
+/* Peru
+#B8932E
+
+Light Steel Blue
+#CCB4DC
+
+Silver
+#C7B3B5
+
+Dim Gray
+#525342
+
+Slate Gray
+#545D69 */
