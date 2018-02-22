@@ -7,6 +7,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 var twit = require('twit');
 
+
 //set up middleware
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -22,6 +23,6 @@ app.get('/', function(req,res){
 //controllers
 app.use('/eBird', require('./controllers/eBird.js'));
 app.use('/scrape', require('./controllers/wikiscrape.js'));
-
+app.use('/twit', require('./controllers/twit.js'));
 
 app.listen(process.env.PORT || 3000);

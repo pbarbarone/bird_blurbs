@@ -31,7 +31,7 @@ const { JSDOM } = jsdom;
 
 //Defaulting to wikipedia to grab image url
 router.get('/', function(req,res){
-    for(var i = 0; i <= 236; i++){
+    for(var i = 238; i <= 481; i++){
         db.bird.findOne({
             where: {id: i}
         }).then(function(bird){
