@@ -28,24 +28,24 @@ router.get('/', function(req, res){
 
         //this is is all the info my front end needs to render how i would like, but more is needed to functionally tweet
         res.render('home',{bird: bird});
-        //initial submit of photo file to twitter to get "approved"
-        T.post('media/upload', { media_data: b64content }, function (err, data, response) {
-          // now we can assign alt text to the media, for use by screen readers and 
-          // other text-based presentations and interpreters 
-          var mediaIdStr = data.media_id_string
-          var altText = "Small flowers in a planter on a sunny balcony, blossoming."
-          var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } }
+        // initial submit of photo file to twitter to get "approved"
+        // T.post('media/upload', { media_data: b64content }, function (err, data, response) {
+        //   // now we can assign alt text to the media, for use by screen readers and 
+        //   // other text-based presentations and interpreters 
+        //   var mediaIdStr = data.media_id_string
+        //   var altText = "Small flowers in a planter on a sunny balcony, blossoming."
+        //   var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } }
          
-          T.post('media/metadata/create', meta_params, function (err, data, response) {
-            if (!err) {
-              // now we can reference the media and post a tweet (media will attach to the tweet) 
-              // final step of tweeting, where the post finally happens. 
-              var params = { status: 'Common Name: '+ bird.comName + ' Scientific Name: ' + bird.sciName, media_ids: [mediaIdStr] }
-              T.post('statuses/update', params, function(err, data, response) {
-              });
-            }
-          });
-        });
+        //   T.post('media/metadata/create', meta_params, function (err, data, response) {
+        //     if (!err) {
+        //       // now we can reference the media and post a tweet (media will attach to the tweet) 
+        //       // final step of tweeting, where the post finally happens. 
+        //       var params = { status: 'Common Name: '+ bird.comName + ' Scientific Name: ' + bird.sciName, media_ids: [mediaIdStr] }
+        //       T.post('statuses/update', params, function(err, data, response) {
+        //       });
+        //     }
+        //   });
+        // });
     });
 });
 

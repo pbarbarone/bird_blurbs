@@ -1,30 +1,94 @@
 body{
   text-align: center;
   background-color: #C7B3B5;
+  /* background-image: url('/imgs/redflowers.jpg') */
+  
 }
 
 .wrapper{
   text-align: center;
   position: relative;
-  margin-top: 100px;
+
 }
 
 .bird-img {
-  border: solid white 3px;
   border-radius: 50%;
+  
 }
 
-/* Peru
-#B8932E
+.img-container {
+  z-index: 1;
+  margin-top: 21px;
 
-Light Steel Blue
-#CCB4DC
+}
 
-Silver
-#C7B3B5
+.main-div {
+  background-color: #faeb78;
+  height: 100vh;
+  border-left: solid #ee6e73 8px;
+  border-right: solid #ee6e73 8px;
+}
 
-Dim Gray
-#525342
+.app-title {
+  z-index: 1;
+  color: #805712;
+  margin-bottom: 28px;
+  font-family: 'Berkshire Swash', cursive;
 
-Slate Gray
-#545D69 */
+
+}
+
+.left-img{
+  background-image: url('/imgs/sweetpeas.jpg');
+  height: 100vh;
+  background-position: top;
+  background-repeat: no-repeat;
+  border-left: solid #c26969 7px;
+}
+
+.right-img{
+  height: 100vh;
+  background-image: url('/imgs/sweetpeas.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  border-right: solid #c26969 7px;
+
+}
+
+.bird-header {
+  font-size: 51px;
+  margin: 5px 0 11px 0;
+}
+
+.bird-com{
+  font-size: 34px;
+  margin: 3px;
+  color: #805712;
+  font-family: 'Berkshire Swash', cursive;
+
+}
+
+.bird-sci{
+  font-size: 28px;
+  margin: 3px;
+  color: #805712;
+  font-family: 'Berkshire Swash', cursive;
+
+}
+
+.branch{
+  position: relative;
+  width: 300px;
+}
+
+.doily{
+  position: relative;
+  top: -300px;
+  width: 400px;
+  z-index: -1;
+}
+
+.btn{
+  margin-top: 18px;
+  font-family: d;
+}

@@ -1,14 +1,37 @@
-<div class="bird-header">
-  <h1>fuck ya, BIRD BLURBS</h1>
-</div>
-<div class="wrapper">
-  <div class="common-name">
-    <h1><%= bird.comName %></h1>
-  </div>
-  <div class="sci-name">
-    <h2><%= bird.sciName %></h2>
-  </div>
-  <div class="img-container">
-    <img class="bird-img" src='<%= bird.imgUrl %>'>
+<div class="container">
+  <div class="row">
+    <div class="left-img col s3">
+    </div>
+    <div class="main-div col s6">
+      <div class="bird-header">
+          <p class="app-title">Bird Blurbs</p>
+
+
+      </div>
+      <div class="wrapper">
+
+        <div>
+          <p class="bird-com"><%= bird.comName %></p>
+        </div>
+        <div>
+          <p class="bird-sci"><%= bird.sciName %></p>
+
+        </div>
+
+        <div class="img-container">
+          
+          <img class="bird-img" src='<%= bird.imgUrl %>'>
+
+        </div>
+
+        <img src="/imgs/branch.png" class="branch" >
+
+      </div>
+      <a class="waves-effect waves-light btn">button</a>
+
+    </div>
+    <div class="right-img col s3">
+      
+    </div>
   </div>
 </div>
